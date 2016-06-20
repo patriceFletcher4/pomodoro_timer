@@ -5,3 +5,8 @@ body {
   font-size: 300px;
   padding-left: 40px;
 }
+
+#start {
+  font-size: 70px;
+  color: black;
+}
