@@ -9,7 +9,9 @@ $(document).ready(function(){
   function startCountdown(){
     setInterval(function(){
       var secondsVal = +seconds.text(); //the plus makes this behave like a
+      var minutesVal = +minutes.text();
       if(secondsVal === 0){
+        minutes.text(minutesVal - 1);
         seconds.text(59);
       } else {
         if(secondsVal <= 10){
