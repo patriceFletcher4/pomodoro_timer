@@ -6,6 +6,11 @@ $(document).ready(function(){
   var breakBtn = $('#break');
 
   start.on('click', startCountdown);
+  breakBtn.on('click', takeABreak);
+
+  function takeABreak(){
+    alert('take a break!')
+  }
 
   function startCountdown(){
     setInterval(function(){
