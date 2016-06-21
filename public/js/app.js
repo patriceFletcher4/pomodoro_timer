@@ -12,7 +12,12 @@ $(document).ready(function(){
       if(secondsVal === 0){
         seconds.text(59);
       } else {
-        seconds.text(secondsVal - 1);
+        if(secondsVal <= 10){
+          seconds.text("0" + (secondsVal-1));
+        } else {
+          seconds.text(secondsVal - 1);
+        }
+
       }
 
     }, 1000);
