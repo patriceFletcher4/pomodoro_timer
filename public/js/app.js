@@ -9,16 +9,21 @@ $(document).ready(function(){
   breakBtn.on('click', takeABreak);
 
   function takeABreak(){
-    alert('take a break!')
+    minutes.text('05');
+    seconds.text('00');
+    startCountdown();
   }
 
   function startCountdown(){
-    setInterval(function(){
+    var countdown = setInterval(function(){
       var secondsVal = +seconds.text(); //the plus makes this behave like a
       var minutesVal = +minutes.text();
       if(secondsVal === 0 && minutesVal === 0){
+        console.log('end');
         breakBtn.removeClass('disabled');
         breakBtn.removeAttr('disabled');
+        clearInterval(countdown);
+        return;
       }
       if(secondsVal === 0){
         minutes.text(minutesVal - 1);
